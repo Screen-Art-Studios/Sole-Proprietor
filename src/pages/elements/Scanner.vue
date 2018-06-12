@@ -1,10 +1,7 @@
 <template>
   <div class="main">
     <div id="form" v-if="modal==='form'">
-      <input type="text" class="form-control" v-model="number" data-stripe="number" />
-      <input type="text" class="form-control" v-model="expMonth" placeholder="Month" data-stripe="exp-month" />
-      <input type="text" class="form-control" placeholder="Year" v-model="expYear" data-stripe="exp-year" />
-      <input type="text" class="form-control" v-model="cvc" data-stripe="cvc" />
+      <div class="toBeStripe"></div>
       <button v-on:click="submit">Submit</button>
       <button v-on:click="modal=''">Back</button>
     </div>
@@ -98,5 +95,6 @@ export default {
 
 <style scoped lang="less">
 .main {
+  margin-top: 200px;
 }
 </style>
