@@ -15,7 +15,7 @@
 
 <script>
 export default {
-  name: 'PageIndex',
+  name: 'Scanner',
   data () {
     return {
       modal: '',

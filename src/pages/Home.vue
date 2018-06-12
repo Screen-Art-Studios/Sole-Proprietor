@@ -1,11 +1,16 @@
 <template>
   <div class="main">
     <scanner class="scanner" v-if="modal==='scanner'" :user="user" v-on:back="modal=''"></scanner>
+    <invoice class="invoice" v-else-if="modal==='invoice'" :user="user" v-on:back="modal=''"></invoice>
     <div class="defaultView" v-else>
       <h1>Dashboard</h1>
       <div class="scannerBlock blocks" v-on:click="modal='scanner'">
         <button class="scannersButton">Scanner</button>
         <div class="scannerIcon"></div>
+      </div>
+      <div class="invoiceBlock blocks" v-on:click="modal='invoice'">
+        <button class="invoiceButton">invoice</button>
+        <div class="invoiceIcon"></div>
       </div>
     </div>
   </div>
@@ -13,12 +18,14 @@
 
 <script>
 import scanner from './elements/Scanner'
+import invoice from './elements/Invoice'
 
 export default {
   name: 'home',
   props: ['user', 'logged'],
   components: {
-    'scanner': scanner
+    'scanner': scanner,
+    'invoice': invoice
   },
   created () {
     let vue = this
@@ -105,6 +112,18 @@ export default {
 
   .calIcon {
     background-image: url("");
+  }
+
+  .scannerBlock {
+    grid-row: 2;
+    grid-column-start: 2;
+    grid-column-end: 4;
+  }
+
+  .invoiceBlock {
+    grid-row: 2;
+    grid-column-start: 4;
+    grid-column-end: 6;
   }
 
   .employeesBlock {
