@@ -1,9 +1,9 @@
 <template>
   <div class="main">
-    <leads class="leads" v-if="modal==='leads'" :user="user" v-on:back="modal=''"></leads>
+    <scanner class="scanner" v-if="modal==='scanner'" :user="user" v-on:back="modal=''"></scanner>
     <div class="defaultView" v-else>
       <h1>Dashboard</h1>
-      <div class="scannerBlock blocks" v-on:click="modal='scanners'">
+      <div class="scannerBlock blocks" v-on:click="modal='scanner'">
         <button class="scannersButton">Scanner</button>
         <div class="scannerIcon"></div>
       </div>

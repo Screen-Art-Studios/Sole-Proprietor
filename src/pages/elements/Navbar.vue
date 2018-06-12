@@ -101,7 +101,7 @@ export default {
     grid-column: 3;
     z-index: 8;
     background-repeat: no-repeat;
-    background-image: url("");
+    background-image: url("../../assets/navbuttonAnimationWhite.svg");
   }
 
   .Login {

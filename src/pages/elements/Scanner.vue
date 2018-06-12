@@ -12,7 +12,7 @@
       <p class='event received'>Device is Ready</p>
       <button id='scanBtn' v-on:click="modal='form'"> Scan Now!</button>
     </div>
-    <div>Back</div>
+    <div class="back" v-on:click="$emit('back')">Back</div>
   </div>
 </template>
 
@@ -96,5 +96,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped lang="less">
+.main {
+}
 </style>
