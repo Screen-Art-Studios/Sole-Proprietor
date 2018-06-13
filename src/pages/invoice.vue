@@ -42,7 +42,7 @@ export default {
   name: 'invoice',
   data () {
     return {
-      invoiceStyle: 'natural'
+      invoiceStyle: 'simple'
     }
   },
   computed: {
