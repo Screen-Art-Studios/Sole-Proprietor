@@ -12,6 +12,10 @@
         <button class="invoiceButton">invoice</button>
         <div class="invoiceIcon"></div>
       </div>
+      <div class="calendarBlock blocks" v-on:click="modal='calendar'">
+        <button class="calendarButton">Calendar</button>
+        <div class="calendarIcon"></div>
+      </div>
     </div>
   </div>
 </template>
@@ -105,7 +109,7 @@ export default {
   }
 
   .calendarBlock {
-    grid-row: 2;
+    grid-row: 3;
     grid-column-start: 2;
     grid-column-end: 4;
   }
