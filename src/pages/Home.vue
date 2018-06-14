@@ -2,6 +2,7 @@
   <div class="main">
     <scanner class="scanner" v-if="modal==='scanner'" :user="user" v-on:back="modal=''"></scanner>
     <invoice class="invoice" v-else-if="modal==='invoice'" :user="user" v-on:back="modal=''"></invoice>
+    <calendar class="calendar" v-else-if="modal==='calendar'" :user="user" v-on:back="modal=''"></calendar>
     <div class="defaultView" v-else>
       <h1>Dashboard</h1>
       <div class="scannerBlock blocks" v-on:click="modal='scanner'">
@@ -23,13 +24,15 @@
 <script>
 import scanner from './elements/Scanner'
 import invoice from './elements/Invoice'
+import calendar from './elements/Calendar'
 
 export default {
   name: 'home',
   props: ['user', 'logged'],
   components: {
     'scanner': scanner,
-    'invoice': invoice
+    'invoice': invoice,
+    'calendar': calendar
   },
   created () {
     let vue = this
