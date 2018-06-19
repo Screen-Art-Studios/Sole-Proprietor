@@ -28,9 +28,11 @@
       <h1>Success!!</h1>
       <button class="back" v-on:click="modal=''">Back</button>
     </div>
+    <users :user="user" v-on:back="modal=''" v-else-if="modal==='users'"></users>
     <div class="accountHome" v-else>
       <h1>Account</h1>
       <button class="generalsettings" v-on:click="modal='sett'">General Settings</button>
+      <button class="users" v-on:click="modal='users'">Users</button>
       <button class="update" v-on:click="modal='pass'">Update Password</button>
       <button class="viewAccount" v-on:click="modal='view'">View Account</button>
     </div>
@@ -39,9 +41,13 @@
 
 <script>
 import axios from 'axios'
+import Users from './elements/Users'
 
 export default {
   name: 'account',
+  components: {
+    'users': Users
+  },
   props: ['logged', 'user'],
   data () {
     return {
