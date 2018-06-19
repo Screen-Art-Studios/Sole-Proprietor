@@ -34,7 +34,7 @@
       <button class="generalsettings" v-on:click="modal='sett'">General Settings</button>
       <button class="users" v-on:click="modal='users'">Users</button>
       <button class="update" v-on:click="modal='pass'">Update Password</button>
-      <button class="viewAccount" v-on:click="modal='view'">View Account</button>
+      <button class="viewAccount" v-on:click="modal='view'; populateActiveUser()">View Account</button>
     </div>
   </div>
 </template>
@@ -65,7 +65,6 @@ export default {
     if (this.logged !== true) {
       this.$router.push('/login')
     }
-    this.populateActiveUser()
   },
   methods: {
     updateUser () {
