@@ -76,8 +76,19 @@ router.post("/login", (req,res) => {
   })
 })
 
+router.get("/all/:companyId", passport.authenticate('jwt', { session: false }),(req, res) => {
+  var companyId = req.params["companyId"];
+  User.find({"companyId": companyId},function (err, users) {
+    if (err) {
+      res.send(err);
+    } else {
+      res.send(users);
+    }
+  })
+})
+
 router.get("/:id", passport.authenticate('jwt', { session: false }), (req, res) => {
-  var userId = new mongodb.ObjectID(req.params['id']);
+  var userId = req.params['id'];
   User.findOne({"_id": userId}, function (err, user) {
     if (err) {
       res.send(err);

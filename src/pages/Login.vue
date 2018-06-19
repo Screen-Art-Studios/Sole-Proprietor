@@ -38,7 +38,7 @@ export default {
   methods: {
     login () {
       let vue = this
-      axios.post('https://api.mystic-crm.com/users/login', {
+      axios.post('http://52.40.157.173:81/users/login', {
         email: vue.email.toLowerCase(),
         password: vue.password
       })

@@ -73,13 +73,7 @@ export default {
   },
   created () {
     let vue = this
-    axios.get('http://52.40.157.173:81/users/all' + vue.user.companyId, {headers: { 'Authorization': 'JWT ' + vue.user.token }})
-      .then(function (response) {
-        vue.users = response.data
-      })
-      .catch(function (error) {
-        console.log(error)
-      })
+    vue.populateUsers()
   },
   methods: {
     viewUser (user) {
@@ -95,7 +89,6 @@ export default {
       let vue = this
       axios.get('http://52.40.157.173:81/users/all/' + vue.user.companyId, {headers: { 'Authorization': 'JWT ' + vue.user.token }})
         .then(function (response) {
-          vue.users = []
           vue.users = response.data
         })
         .catch(function (error) {
