@@ -136,7 +136,6 @@ export default {
   @titlefont: 'Timmana', sans-serif;
   .main {
     width: 100%;
-    border: 12px solid @blue;
     height: 94.5%;
     position: fixed;
     margin-top: 50px;
